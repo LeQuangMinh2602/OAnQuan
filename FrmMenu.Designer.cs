@@ -132,7 +132,7 @@
             this.cbNhac_48_Minh.Text = "♬";
             this.cbNhac_48_Minh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cbNhac_48_Minh.UseVisualStyleBackColor = false;
-            this.cbNhac_48_Minh.CheckedChanged += new System.EventHandler(this.cbNhac_48_Minh_CheckedChanged_1);
+            this.cbNhac_48_Minh.CheckedChanged += new System.EventHandler(this.cbNhac_48_Minh_CheckedChanged);
             // 
             // btnVanMoi1Player_48_Minh
             // 

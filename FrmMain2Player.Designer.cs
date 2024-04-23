@@ -598,7 +598,6 @@
         private System.Windows.Forms.Label lbDiemQuan2_48_Minh;
         private System.Windows.Forms.Label lbDiem2_48_Minh;
         private System.Windows.Forms.Label lbThoiGian2_48_Minh;
-        public System.Windows.Forms.Timer tThoiGian_48_Minh;
         protected System.Windows.Forms.Button btnMenu_48_Minh;
         protected System.Windows.Forms.Button btnO10_48_Minh;
         protected System.Windows.Forms.Button btnO5_48_Minh;
@@ -610,6 +609,7 @@
         protected System.Windows.Forms.Button btnO11_48_Minh;
         protected System.Windows.Forms.Button btnO8_48_Minh;
         protected System.Windows.Forms.Button btnO9_48_Minh;
+        public System.Windows.Forms.Timer tThoiGian_48_Minh;
     }
 }
 

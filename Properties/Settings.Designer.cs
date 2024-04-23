@@ -274,5 +274,17 @@ namespace OAnQuan.Properties {
                 this["btnO11_48_Minh"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool soNguoiChoi {
+            get {
+                return ((bool)(this["soNguoiChoi"]));
+            }
+            set {
+                this["soNguoiChoi"] = value;
+            }
+        }
     }
 }

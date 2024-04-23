@@ -62,11 +62,11 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrnMain1Player.cs">
+    <Compile Include="FrmMain1Player.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrnMain1Player.Designer.cs">
-      <DependentUpon>FrnMain1Player.cs</DependentUpon>
+    <Compile Include="FrmMain1Player.Designer.cs">
+      <DependentUpon>FrmMain1Player.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +76,8 @@
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrnMain1Player.resx">
-      <DependentUpon>FrnMain1Player.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMain1Player.resx">
+      <DependentUpon>FrmMain1Player.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

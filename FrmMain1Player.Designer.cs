@@ -1,6 +1,6 @@
 ﻿namespace OAnQuan
 {
-    partial class FrnMain1Player_48_Minh
+    partial class FrmMain1Player_48_Minh
     {
         /// <summary>
         /// Required designer variable.
@@ -34,23 +34,21 @@
             // 
             // btnO0_48_Minh
             // 
-            this.btnO0_48_Minh.Text = "3";
+            this.btnO0_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 18F);
             // 
             // btnO6_48_Minh
             // 
-            this.btnO6_48_Minh.Text = "3";
+            this.btnO6_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 18F);
             // 
             // gbPlayer2_48_Minh
             // 
+            this.gbPlayer2_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 7F);
             this.gbPlayer2_48_Minh.Text = "Bot";
             // 
             // gbPlayer1_48_Minh
             // 
+            this.gbPlayer1_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 7F);
             this.gbPlayer1_48_Minh.Text = "Player";
-            // 
-            // lbQuan1_48_Minh
-            // 
-            this.lbQuan1_48_Minh.Text = "0";
             // 
             // lbNguoiChoi1_48_Minh
             // 
@@ -64,55 +62,47 @@
             this.lbNguoiChoi2_48_Minh.Size = new System.Drawing.Size(170, 70);
             this.lbNguoiChoi2_48_Minh.Text = "Máy:";
             // 
-            // tThoiGian_48_Minh
-            // 
-            this.tThoiGian_48_Minh.Enabled = true;
-            // 
             // btnMenu_48_Minh
             // 
             this.btnMenu_48_Minh.Click += new System.EventHandler(this.btnMenu_48_Minh_Click);
             // 
-            // btnO10_48_Minh
-            // 
-            this.btnO10_48_Minh.Text = "0";
-            // 
             // btnO5_48_Minh
             // 
-            this.btnO5_48_Minh.Text = "1";
+            this.btnO5_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 16F);
             // 
             // btnO4_48_Minh
             // 
-            this.btnO4_48_Minh.Text = "3";
+            this.btnO4_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 16F);
             // 
             // btnO3_48_Minh
             // 
-            this.btnO3_48_Minh.Text = "0";
+            this.btnO3_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 16F);
+            // 
+            // btnO2_48_Minh
+            // 
+            this.btnO2_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 16F);
             // 
             // btnO1_48_Minh
             // 
-            this.btnO1_48_Minh.Text = "3";
+            this.btnO1_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 16F);
             // 
             // btnO7_48_Minh
             // 
-            this.btnO7_48_Minh.Text = "0";
-            // 
-            // btnO11_48_Minh
-            // 
-            this.btnO11_48_Minh.Text = "0";
+            this.btnO7_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 16F);
             // 
             // btnO8_48_Minh
             // 
-            this.btnO8_48_Minh.Text = "1";
+            this.btnO8_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 16F);
             // 
             // btnO9_48_Minh
             // 
-            this.btnO9_48_Minh.Text = "1";
+            this.btnO9_48_Minh.Font = new System.Drawing.Font("Lucida Handwriting", 16F);
             // 
-            // FrnMain1Player_48_Minh
+            // FrmMain1Player_48_Minh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.ClientSize = new System.Drawing.Size(1699, 1202);
-            this.Name = "FrnMain1Player_48_Minh";
+            this.Name = "FrmMain1Player_48_Minh";
             this.gbPlayer2_48_Minh.ResumeLayout(false);
             this.gbPlayer1_48_Minh.ResumeLayout(false);
             this.ResumeLayout(false);

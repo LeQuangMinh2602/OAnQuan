@@ -48,7 +48,7 @@ namespace OAnQuan
             Thread.Sleep(time);
             ct.BackgroundImage = crrIm;
             ct.Font = new Font("Lucida Handwriting", size);
-            ct.Update(); 
+            ct.Update();
         }
 
         protected void hoatAnh_48_Minh(Control ct, int sizeDiff, Color cl, int time)
@@ -368,9 +368,9 @@ namespace OAnQuan
 
         protected int checkWinner_48_Minh()
         {
-            if (int.Parse(txtDiem1_48_Minh.Text) > int.Parse(txtDiem2_48_Minh.Text))
+            if (int.Parse(txtDiem1_48_Minh.Text) + 10 * int.Parse(txtDiemQuan1_48_Minh.Text) > int.Parse(txtDiem2_48_Minh.Text) + 10 * int.Parse(txtDiemQuan2_48_Minh.Text))
                 return 1;
-            else if (int.Parse(txtDiem1_48_Minh.Text) < int.Parse(txtDiem2_48_Minh.Text))
+            else if (int.Parse(txtDiem1_48_Minh.Text) + 10 * int.Parse(txtDiemQuan1_48_Minh.Text) < int.Parse(txtDiem2_48_Minh.Text) + 10 * int.Parse(txtDiemQuan2_48_Minh.Text))
                 return -1;
             else
                 return 0;
@@ -385,11 +385,12 @@ namespace OAnQuan
                 thongTin = "NGƯỜI CHIẾN THẮNG: NGƯỜI CHƠI 2!\n\n\n";
             else
                 thongTin = "HAI NGƯỜI CHƠI HÒA NHAU!\n\n";
-            thongTin += String.Format("Người chơi 1:\n\tSố dân ăn được {0}.\n\tSố quan ăn được {1}\n\n" +
-                                            "Người chơi 2:\n\tSố dân ăn được {2}.\n\tSố quan ăn được {3}",
-                                            txtDiem1_48_Minh.Text, txtDiemQuan1_48_Minh.Text,
-                                            txtDiem2_48_Minh.Text, txtDiemQuan2_48_Minh.Text);
+            thongTin += String.Format("Người chơi 1:\n\tSố dân ăn được {0}.\n\tSố quan ăn được {1}\n\tTổng điểm {2}\n\n" +
+                                            "Người chơi 2:\n\tSố dân ăn được {3}.\n\tSố quan ăn được {4}\n\tTổng điểm {5}\n\n",
+                                            txtDiem1_48_Minh.Text, txtDiemQuan1_48_Minh.Text, int.Parse(txtDiem1_48_Minh.Text) + 10 * int.Parse(txtDiemQuan1_48_Minh.Text),
+                                            txtDiem2_48_Minh.Text, txtDiemQuan2_48_Minh.Text, int.Parse(txtDiem2_48_Minh.Text) + 10 * int.Parse(txtDiemQuan2_48_Minh.Text));
             MessageBox.Show(thongTin, "Kêt quả", MessageBoxButtons.OK);
+            this.Hide();
             docFile_48_Minh("OAnQuan.Resources.Data.txt");
             Application.Restart();
         }
@@ -420,6 +421,8 @@ namespace OAnQuan
                 }
                 gbPlayer1_48_Minh.Enabled = nguoiChoi;
                 gbPlayer2_48_Minh.Enabled = !nguoiChoi;
+                FrmMenu_48_Minh.soNguoiChoi = bool.Parse(reader.ReadLine());
+
             }
             catch (Exception)
             { }
@@ -486,6 +489,7 @@ namespace OAnQuan
             Properties.Settings.Default.btnO9_48_Minh = btnO9_48_Minh.Text;
             Properties.Settings.Default.btnO10_48_Minh = btnO10_48_Minh.Text;
             Properties.Settings.Default.btnO11_48_Minh = btnO11_48_Minh.Text;
+            Properties.Settings.Default.soNguoiChoi = FrmMenu_48_Minh.soNguoiChoi;
             Properties.Settings.Default.Save();
         }
        
@@ -517,7 +521,8 @@ namespace OAnQuan
             anDa_48_Minh(!nguoiChoi);
             if (checkGameOver_48_Minh())
                 hienKetQua_48_Minh();
-            doiLuotChoi_48_Minh();
+            else
+                doiLuotChoi_48_Minh();
             tThoiGian_48_Minh.Start();
         }
 
@@ -528,7 +533,8 @@ namespace OAnQuan
             anDa_48_Minh(nguoiChoi);          
             if (checkGameOver_48_Minh())
                 hienKetQua_48_Minh();
-            doiLuotChoi_48_Minh();
+            else
+                doiLuotChoi_48_Minh();
             tThoiGian_48_Minh.Start();
         }
 
@@ -562,11 +568,11 @@ namespace OAnQuan
             Application.Exit();
         }
 
-        private void btnMenu_48_Minh_Click(object sender, EventArgs e)
+        protected virtual void btnMenu_48_Minh_Click(object sender, EventArgs e)
         {
             tThoiGian_48_Minh.Stop();
-            FrmMenu_48_Minh.frmMain2_48_Minh.Size = this.Size;
-            FrmMenu_48_Minh.frmMain2_48_Minh.Location = this.Location;
+            FrmMenu_48_Minh.frmMenu_48_Minh.Size = FrmMenu_48_Minh.frmMain2_48_Minh.Size;
+            FrmMenu_48_Minh.frmMenu_48_Minh.Location = FrmMenu_48_Minh.frmMain2_48_Minh.Location;
             FrmMenu_48_Minh.frmMenu_48_Minh.Show();
             this.Hide();
         }

@@ -16,12 +16,13 @@ namespace OAnQuan
     public partial class FrmMenu_48_Minh : Form
     {
 
-        private static bool isFirstLoggin = true;
-        private bool soNguoiChoi;
+        private static bool isFirstLoggin1 = true;
+        private static bool isFirstLoggin2 = true;
+        public static bool soNguoiChoi;
         private SoundPlayer choiNhac;
         public static FrmMenu_48_Minh frmMenu_48_Minh;
-        public static FrmMain2Player_48_Minh frmMain2_48_Minh = new FrmMain2Player_48_Minh();
-        public static FrnMain1Player_48_Minh frmMain1_48_Minh = new FrnMain1Player_48_Minh();
+        public static FrmMain2Player_48_Minh frmMain2_48_Minh;
+        public static FrmMain2Player_48_Minh frmMain1_48_Minh;
 
         public FrmMenu_48_Minh()
         {
@@ -32,33 +33,40 @@ namespace OAnQuan
         private void frmMenu_48_Minh_Load(object sender, EventArgs e)
         {
             choiNhac = new SoundPlayer(Properties.Resources.FolkMusic);
+            this.Size = new Size(1200, 800);
         }
 
         private void btnChoiTiep_48_Minh_Click(object sender, EventArgs e)
         {
             frmMenu_48_Minh = this;
             this.Hide();
+            if (isFirstLoggin1 && isFirstLoggin2)
+                soNguoiChoi = Properties.Settings.Default.soNguoiChoi;
             if (soNguoiChoi)
             {
-                frmMain2_48_Minh.Size = this.Size;
-                frmMain2_48_Minh.Location = this.Location;
-                if (isFirstLoggin)
+                if (isFirstLoggin2)
                 {
-                    isFirstLoggin = false;
+                    frmMain2_48_Minh = new FrmMain2Player_48_Minh();
+                    isFirstLoggin2 = false;
                     frmMain2_48_Minh.docFile_48_Minh();
                 }
+                frmMain2_48_Minh.Size = this.Size;
+                frmMain2_48_Minh.Location = this.Location;
                 frmMain2_48_Minh.Show();
                 frmMain2_48_Minh.tThoiGian_48_Minh.Start();
             }
             else
             {
-                frmMain1_48_Minh.Size = this.Size;
-                frmMain1_48_Minh.Location = this.Location;
-                if (isFirstLoggin)
+                if (isFirstLoggin1)
                 {
-                    isFirstLoggin = false;
+                    frmMain1_48_Minh = new FrmMain1Player_48_Minh();
+                    isFirstLoggin1 = false;
                     frmMain1_48_Minh.docFile_48_Minh();
                 }
+                isFirstLoggin1 = false;
+                frmMain1_48_Minh.Size = this.Size;
+                frmMain1_48_Minh.Location = this.Location;
+                
                 frmMain1_48_Minh.Show();
                 frmMain1_48_Minh.tThoiGian_48_Minh.Start();
             }
@@ -70,7 +78,7 @@ namespace OAnQuan
                 Application.Exit();
         }
 
-        private void cbNhac_48_Minh_CheckedChanged_1(object sender, EventArgs e)
+        private void cbNhac_48_Minh_CheckedChanged(object sender, EventArgs e)
         {
             if (cbNhac_48_Minh.Checked)
                 choiNhac.PlayLooping();
@@ -85,10 +93,12 @@ namespace OAnQuan
 
         private void btnVanMoi2Player_48_Minh_Click(object sender, EventArgs e)
         {
+            if (isFirstLoggin2)
+                frmMain2_48_Minh = new FrmMain2Player_48_Minh();
+            isFirstLoggin2 = false;
             soNguoiChoi = true;
             frmMenu_48_Minh = this;
             this.Hide();
-            isFirstLoggin = false;
             frmMain2_48_Minh.docFile_48_Minh("OAnQuan.Resources.Data.txt");
             frmMain2_48_Minh.Size = this.Size;
             frmMain2_48_Minh.Location = this.Location;
@@ -98,10 +108,12 @@ namespace OAnQuan
 
         private void btnVanMoi1Player_48_Minh_Click(object sender, EventArgs e)
         {
+            if (isFirstLoggin1)
+                frmMain1_48_Minh = new FrmMain1Player_48_Minh();
+            isFirstLoggin1 = false;
             soNguoiChoi = false;
             frmMenu_48_Minh = this;
             this.Hide();
-            isFirstLoggin = false;
             frmMain1_48_Minh.docFile_48_Minh("OAnQuan.Resources.Data.txt");
             frmMain1_48_Minh.Size = this.Size;
             frmMain1_48_Minh.Location = this.Location;
